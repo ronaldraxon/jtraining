@@ -1,0 +1,15 @@
+version: '2'
+services:
+    sicc-app:
+        image: sicc
+        external_links:
+            - sicc-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/sicc?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    sicc-mysql:
+        extends:
+            file: mysql.yml
+            service: sicc-mysql
