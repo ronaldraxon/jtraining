@@ -18,10 +18,10 @@ spring:
         livereload:
             enabled: false # we use gulp + BrowserSync for livereload
     datasource:
-        url: jdbc:mysql://localhost:3306/SICC?useUnicode=true&characterEncoding=utf8&useSSL=false
+        url: jdbc:mysql://localhost:3306/sicc_db
         name:
         username: root
-        password:
+        password: Antrax2019*
         hikari:
             data-source-properties:
                 cachePrepStmts: true
@@ -33,11 +33,21 @@ spring:
         database: MYSQL
         show_sql: true
         properties:
-            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_second_level_cache: true
             hibernate.cache.use_query_cache: false
             hibernate.generate_statistics: true
+            hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
     mail:
-        host: localhost
+        host: smtp.gmail.com
+        port: 587
+        username: ronaldrvill@gmail.com  #Replace this field with your Gmail username.
+        password: 742617000027           #Replace this field with your Gmail password.
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
     messages:
         cache-seconds: 1
     thymeleaf:
@@ -54,6 +64,10 @@ server:
 # ===================================================================
 
 jhipster:
+    cache: # Hibernate 2nd level cache, used by CacheConfiguration
+        timeToLiveSeconds: 3600
+        ehcache:
+            maxBytesLocalHeap: 16M
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: SICC@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

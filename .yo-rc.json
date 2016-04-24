@@ -6,7 +6,7 @@
     "packageFolder": "com/proycomp/sicc",
     "serverPort": "8080",
     "authenticationType": "jwt",
-    "hibernateCache": "no",
+    "hibernateCache": "ehcache",
     "clusteredHttpSession": "no",
     "websocket": "no",
     "databaseType": "sql",
@@ -15,7 +15,7 @@
     "searchEngine": "no",
     "buildTool": "maven",
     "enableSocialSignIn": false,
-    "jwtSecretKey": "4e9c78b8b0997e402f526e01c9b6f7391725c320",
+    "jwtSecretKey": "dc70f1b39ce7eba1617c0d49ff8ac096d96e5d47",
     "useSass": false,
     "applicationType": "monolith",
     "testFrameworks": [

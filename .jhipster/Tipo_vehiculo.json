@@ -1,0 +1,18 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descripcion_uso",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160423231249",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "tipo_vehiculo",
+    "pagination": "pager"
+}
